@@ -8,6 +8,11 @@ function refreshWeather(response) {
   let windSpeed = document.querySelector("#wind-speed");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = ` <img
+              src="${response.data.condition.icon_url}"
+              alt="icon"
+              class="weather-app-temperature-icon" />`;
 
   console.log = response.data.condition.description;
   timeElement.innerHTML = formatDate(date);
@@ -55,4 +60,28 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 // Initial call to display weather for Lusaka when the page loads
 searchCity("Lusaka");
 
-//Weather image functionality
+//
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+<div class="weather-forecast-day id ="forecast">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-icon">🌤️</div>
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>15°</strong>
+              </div>
+              <div class="weather-forecast-temperature">9°</div>
+            </div>
+          </div>`;
+  });
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
