@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/Src/index.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form action="#" id="search-form" class="search-form">
+          <input
+            type="search"
+            name=""
+            id="form-search-input"
+            placeholder="Enter a city"
+            required
+            class="search-form-input" />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city">City</h1>
+            <p class="weather-app-details">
+              <span class="time" id="time"> Tuesday:14:39</span>,
+              <span class="description" id="description"
+                >scattered clouds
+              </span>
+              <br />
+              Humidity:
+              <strong class="humidity" id="humidity">66%</strong> Wind:
+              <strong class="wind-speed" id="wind-speed">3.13km/h</strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <div class="weather-app-temperature-icon">🌤️</div>
+            <div class="weather-app-temperature-value" id="temperature">12</div>
+            <div class="weather-app-temperature-unit">°C</div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        Coded by
+        <a href="https://github.com/AngelaSinonge12-ux" target="_blank"
+          >Angela</a
+        >
+        Code hosted on
+        <a
+          href="https://github.com/AngelaSinonge12-ux/Weather_Application"
+          target="_blank"
+          >Github</a
+        >
+        and website hosted on
+        <a href=" #" target="_blank">Vercel</a>
+      </footer>
+    </div>
+    <script src="/script/index.js"></script>
+  </body>
+</html>
